@@ -204,8 +204,9 @@ while True:
             '\nLook! there is the code on the front door! Here we go!\n<beep> <beep> <boop> <bop>\n*Access Granted*\n')
         input("Please enter anything to escape!\n")
         typewriter(
-            "\nCongratulations you have escaped the Mansion!\n Now go let the world know what you discovered about Pete!")
+            "\nCongratulations you have escaped the Mansion!\n Now go let the world know what you discovered about Pete!\n")
         input("Please enter anything to exit the game\n")
+        break
     elif currentRoom == 'Atrium' and 'code' not in inventory:
         print('---')
         typewriter(
