@@ -59,9 +59,9 @@ Tips:
 
 def showStatus():
     # printing player status
-    typewriter('You are in the ' + currentRoom)
+    print('You are in the ' + currentRoom)
     # prinitng player inventory
-    typewriter('\nInventory: ' + str(inventory))
+    print('Inventory: ' + str(inventory))
 
 
 # player inventory, items gett added to this list when acquired
@@ -128,7 +128,7 @@ while True:
 # input for players move i.e. 'go' or 'get'
     move = ''
     while move == '':
-        move = input('\n>')
+        move = input('>')
         print("\n\n\n")
 
     move = move.lower().split(" ", 1)
@@ -142,7 +142,7 @@ while True:
 
         # print message if the player cannot go a direction
         else:
-            print('You can\'t go that way!')
+            typewriter('You can\'t go that way!\n')
 
     # if player input is 'get'
     if move[0] == 'get':
@@ -163,7 +163,9 @@ while True:
             # for bathroom no key yet
             elif currentRoom == 'Bathroom':
                 inventory += [move[1]]
-                print(move[1] + ' placed in your inventory!')
+                print('---')
+                typewriter(move[1] + ' placed in your inventory!\n')
+                print('---')
                 del rooms[currentRoom]['item']
             # for office with flash drive in inventory
             elif currentRoom == 'Office' and inventory.__contains__('flash drive'):
